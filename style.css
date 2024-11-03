@@ -1,0 +1,85 @@
+/* style.css */
+
+:root {
+  --orange: #FF7F11;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+.habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.habit-item:last-child {
+  border-bottom: none;
+}
+
+.complete-btn {
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.complete-btn.completed {
+  background-color: var(--orange);
+  color: white;
+  border-color: var(--orange);
+}
+/* Circular Progress Bar */
+.progress-circle-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+.bg-circle,
+.progress {
+  fill: none;
+  stroke-width: 10;
+}
+
+.bg-circle {
+  stroke: #eee;
+}
+
+.progress {
+  stroke: var(--orange);
+  stroke-dasharray: 314;
+  /* Circumference of the circle (2 * π * 50) */
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--orange);
+  font-weight: bold;
+}
+
+#progress-percent {
+  font-size: 1.5rem;
+}
